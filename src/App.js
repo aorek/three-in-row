@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext } from "react"
+
+import "./App.css"
+
+import { GameCtxProvider } from "./context/GameCtx"
+import Board from "./components/board"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GameCtxProvider>
+        <div className="container">
+          <Board />
+        </div>
+      </GameCtxProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
