@@ -2,11 +2,13 @@
   display: grid;
   grid-template-rows: 200px 200px 200px;
   grid-template-columns: 200px 200px 200px;
+  gap: 10px;
 }
 
 .container {
   display: grid;
   place-items: center;
+  height: 100vh;
 }
 
 .box {
@@ -16,4 +18,10 @@
   align-items: center;
   justify-content: center;
   color: #aaa;
+  cursor: pointer;
+  font-size: 10em;
+}
+
+.isCandidate {
+  background-color: rgba(72, 187, 120, 0.5);
 }

@@ -1,13 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 
-export default function Cell({ cell }) {
-  const [content, setContent] = useState("")
-
-  const handleClick = () => {}
-
+export default function Cell({ id, onClick, content, isCandidate }) {
   return (
-    <div className="box" onClick={handleClick}>
-      {cell.id}
+    <div
+      className={`box${isCandidate ? " isCandidate" : ""}`}
+      onClick={() => onClick(id)}
+    >
+      {content}
     </div>
   )
 }
