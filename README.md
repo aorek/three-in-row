@@ -13,4 +13,4 @@ Es el turno de la máquina. El ejercicio consiste en ganar la partida siempre qu
 
 ### Desplegado en
 
-http://178.62.55.214/
+http://178.62.103.138/
