@@ -25,3 +25,14 @@
 .isCandidate {
   background-color: rgba(72, 187, 120, 0.5);
 }
+
+.alert-error {
+  display: none;
+  background-color: rgb(255, 0, 0, 0.3);
+  text-align: center;
+  width: 30%;
+}
+
+.show {
+  display: inline !important;
+}

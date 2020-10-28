@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 
 import GameCtx, { GAME_STATE } from "../../context/GameCtx"
 import { useBoard } from "../../hooks/useBoard"
@@ -7,9 +7,15 @@ import Cell from "../cell"
 export default function Board() {
   const gameCtx = useContext(GameCtx)
   const { doTurn, newGame } = useBoard()
+  const [someoneWins, setSomeoneWins] = useState(true)
 
   const handleCellClick = id => {
     doTurn(id, "O")
+  }
+
+  const handleNewGame = () => {
+    setSomeoneWins(true)
+    newGame()
   }
 
   const refreshRows = () => {
@@ -56,7 +62,7 @@ export default function Board() {
     gameCtx.setBoard(newBoard)
 
     if (winners.length === 0) {
-      alert("Nadie gana con la configuración inicial")
+      setSomeoneWins(false)
     }
 
     gameCtx.setGameState(GAME_STATE.GAME_OVER)
@@ -71,6 +77,9 @@ export default function Board() {
       >
         Check winners
       </button>
+      <div className={`alert-error ${someoneWins ? "" : "show"}`}>
+        Nadie gana con la configuración inicial
+      </div>
       <div className="game-board">{rows}</div>
     </>
   )
