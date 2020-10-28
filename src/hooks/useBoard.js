@@ -14,7 +14,7 @@ export function useBoard() {
     let O = 0
 
     const newBoard = gameCtx.board.map(cell => {
-      if (cell.id > 6) return cell
+      if (cell.id > 6) return { ...cell, isCandidate: false }
 
       const dice = Math.floor(Math.random() * (6 - 1)) + 1
 
