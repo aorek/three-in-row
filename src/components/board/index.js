@@ -57,8 +57,9 @@ export default function Board() {
 
     if (winners.length === 0) {
       alert("Nadie gana con la configuración inicial")
-      gameCtx.setGameState(GAME_STATE.GAME_OVER)
     }
+
+    gameCtx.setGameState(GAME_STATE.GAME_OVER)
   }
 
   return (
