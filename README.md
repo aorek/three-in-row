@@ -1,4 +1,4 @@
-# Three in row game
+# Tic tac toe exercise
 
 Tenemos el juego del tres en raya. Partimos de la idea de que tanto la máquina como el jugador han ido rellenando secuencialmente las dos primeras filas hasta completarlas dejando la tercera línea completamente libre.
 
