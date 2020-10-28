@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 
-import GameCtx from "../../context/GameCtx"
+import GameCtx, { GAME_STATE } from "../../context/GameCtx"
 import { useBoard } from "../../hooks/useBoard"
 import Cell from "../cell"
 
@@ -54,12 +54,22 @@ export default function Board() {
       newBoard[cell.id - 1] = cell
     })
     gameCtx.setBoard(newBoard)
+
+    if (winners.length === 0) {
+      alert("Nadie gana con la configuración inicial")
+      gameCtx.setGameState(GAME_STATE.GAME_OVER)
+    }
   }
 
   return (
     <>
       <button onClick={newGame}>New game</button>
-      <button onClick={checkWinners}>Check winners</button>
+      <button
+        onClick={checkWinners}
+        disabled={gameCtx.gameState === GAME_STATE.GAME_OVER}
+      >
+        Check winners
+      </button>
       <div className="game-board">{rows}</div>
     </>
   )
